@@ -1,0 +1,15 @@
+---
+- name: copy over sources.list
+  copy: src=sources.list
+        dest=/etc/apt/sources.list
+        owner=root
+        group=root
+        mode=0644
+
+- name: copy over apt preferences
+  copy: src=preferences
+        dest=/etc/apt/preferences
+        owner=root
+        group=root
+        mode=0644
+

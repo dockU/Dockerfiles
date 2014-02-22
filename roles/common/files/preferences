@@ -1,0 +1,8 @@
+Package: *
+Pin: release a=stable
+Pin-Priority: 800
+
+Package: java-package
+Pin: release a=testing
+Pin-Priority: 900
+
