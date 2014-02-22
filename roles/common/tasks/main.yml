@@ -26,3 +26,38 @@
            group=root
            mode=0644
 
+- name: update apt cache
+  raw: apt-get update
+
+- name: install python-apt
+  raw: apt-get -y install python-apt
+
+- name: apt-get upgrade
+  apt: upgrade=yes
+
+- name: purge nano
+  apt: state=abset
+       purge=yes
+       pkg=nano
+
+- name: apt-get install required files
+  apt: state=latest name=$item update_cache=yes
+  with_items:
+  - build-essential
+  - curl
+  - dnsutils
+  - docker.io
+  - git
+  - htop
+  - mtr-tiny
+  - python
+  - python-dev
+  - python-pip
+  - python-setuptools
+  - rsync
+  - screen
+  - sudo
+  - vim
+  - wget
+  - zsh
+
